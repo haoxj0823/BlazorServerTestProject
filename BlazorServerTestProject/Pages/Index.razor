@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@if (_bytes != null)
+{
+    @foreach (var b in _bytes)
+    {
+        <p class="text-primary">@b</p>
+    }
+}
+else if (_exception != null)
+{
+    <p class="text-danger">@(new MarkupString(_exception.ToString().Replace("\r\n", "<br/>")))</p>
+}
